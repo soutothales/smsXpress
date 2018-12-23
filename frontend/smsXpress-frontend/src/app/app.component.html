@@ -1,0 +1,43 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<header>
+  <div id="header">
+    <div class="brand">
+      <a href="#homeTab" 
+      pageScroll [pageScrollOffset]="70" [pageScrollEasing]="myEasing"
+      class="name">smsXpress
+    </a>
+
+    </div>
+    <ul class="menu">
+      <li><a href="#sobreTab" 
+        pageScroll [pageScrollOffset]="70" [pageScrollEasing]="myEasing">Sobre</a></li>
+
+      <li><a href="#smsTab"
+        pageScroll [pageScrollOffset]="70" [pageScrollEasing]="myEasing">Enviar SMS</a></li>
+
+      <li><a href="#">Consultar protocolo</a></li>
+    </ul>
+  </div>
+
+</header>
+
+
+<div id="content">
+    <div id="homeTab">
+        <app-home></app-home>
+      </div>
+      
+      <div id="sobreTab">
+        <app-sobre></app-sobre>
+      </div>
+      
+      <div id="smsTab">
+        <app-sms></app-sms>
+      </div>
+</div>
+
+<!-- <body>
+    
+  <router-outlet></router-outlet>
+
+</body> -->
