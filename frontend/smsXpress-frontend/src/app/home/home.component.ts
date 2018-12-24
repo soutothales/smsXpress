@@ -1,6 +1,6 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { PageScrollInstance, PageScrollService, EasingLogic } from 'ngx-page-scroll';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-home',
@@ -9,8 +9,12 @@ import { PageScrollInstance, PageScrollService, EasingLogic } from 'ngx-page-scr
 })
 export class HomeComponent implements OnInit {
 
-  public constructor() { }
+  private objApp: AppComponent;
 
+  //private myEasing = this.objApp.myEasing;
+  
+  public constructor() {      
+  }
 
   ngOnInit() { }
 

@@ -1,4 +1,4 @@
-<div id="homePage">
+<!-- <div id="homePage">
 <h3>Custom easing</h3>
   <p>You may specify a custom easing function to manipulate the scroll position over time. This example uses an <i>easeInOutExpo</i>
     function.</p>
@@ -7,4 +7,24 @@
           id="customEasingButton">
     Sobre
   </button>
+</div> -->
+
+<div class="welcome">
+    <div class="main-welcome">
+        <div class="main-menu">
+
+          <div class="main-content">
+              <p>Bem vindo ao smsXpress!! clique em Sobre para saber mais a respeito de
+                nossa ferramenta. Se já souber como funciona clique em Enviar SMS e bom uso!
+              </p>
+              <button><a href="#sobreTab" 
+                pageScroll [pageScrollEasing]="myEasing" [pageScrollOffset]="myScrollOffset"
+                id="customEasingButton">Sobre</a></button> 
+              <button><a href="#smsTab" 
+                pageScroll [pageScrollEasing]="myEasing" [pageScrollOffset]="myScrollOffset"
+                id="customEasingButton">Enviar SMS</a></button> 
+                    
+          </div>
+        </div>
+    </div>
 </div>

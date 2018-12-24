@@ -1,7 +1,5 @@
-import { Component, Inject } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { DOCUMENT } from '@angular/common';
-import { PageScrollService, EasingLogic } from 'ngx-page-scroll';
+import { Component } from '@angular/core';
+import { EasingLogic } from 'ngx-page-scroll';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +7,8 @@ import { PageScrollService, EasingLogic } from 'ngx-page-scroll';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent { 
+
+  public myScrollOffset: number = 25;
 
   public myEasing: EasingLogic = {
     ease: (t: number, b: number, c: number, d: number): number => {
@@ -26,8 +26,7 @@ export class AppComponent {
     }
   };
 
-  public constructor(@Inject(DOCUMENT) private document: any,
-                    private pageScrollService: PageScrollService) {
+  public constructor() {
   }
   
   title = 'smsXpress-frontend';
