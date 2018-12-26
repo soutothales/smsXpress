@@ -5,12 +5,11 @@
 
 /* Welcome Section */
 
-* {
+/* * {
     box-sizing: content-box;
-  }
+  } */
 
 .welcome {
-    width: 100%;
     height: 100vh;
     background-color: #87509c;
     position: relative;
@@ -19,6 +18,7 @@
 }
 
 .welcome a {
+    position: relative;
     text-decoration: none;
     color: #fff;
     
@@ -26,39 +26,40 @@
 
 
 .welcome .main-welcome {
-    width: 1140px;
     margin: 0 auto;
     position: absolute;
     right: 0;
     left: 0;
     top: 60px;
-
 }
 
 .welcome .main-welcome .main-menu {
     height: 40px;
     line-height: 40px;
-    width: 1120px;
     margin-bottom: 144px;
-
-
 }
 
 
 .welcome .main-content {
-    margin-top: 100px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
+    position: absolute;
+    top: 70%;
+    right: 0;
+    left: 0;
 }
 
 .welcome .main-content p {
     margin: 0;
+    align-content: center;
     display: inline-block;
-    font-size: 42px;
+    font-size: 36px;
     margin-bottom: 60px;
 }
 
 .welcome .main-content button {
-    
     padding: 15px 40px;
     background-color: #eb7d4b;
     border-radius: 10px;
@@ -66,5 +67,6 @@
     box-shadow: 1px 4px #c86a40;
     border: 0;
     margin: 80px;
-    margin-top: 50px;
+    margin-top: auto;
+    margin-bottom: 5%;
 }

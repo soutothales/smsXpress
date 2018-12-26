@@ -1,6 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <header>
-  <div id="header">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+    
+    <div id="header">
     <div class="brand">
       <a href="#homeTab" 
       pageScroll [pageScrollOffset]="myScrollOffset" [pageScrollEasing]="myEasing"
@@ -24,7 +27,8 @@
 <body>
     <div id="content">
         <div id="homeTab">
-            <app-home></app-home>
+            <app-home [myEasing]="myEasing"
+                     [myScrollOffset]="myScrollOffset"></app-home>
           </div>
           
           <div id="sobreTab">

@@ -8,7 +8,7 @@ import { EasingLogic } from 'ngx-page-scroll';
 })
 export class AppComponent { 
 
-  public myScrollOffset: number = 25;
+  public myScrollOffset: number = 30;
 
   public myEasing: EasingLogic = {
     ease: (t: number, b: number, c: number, d: number): number => {
