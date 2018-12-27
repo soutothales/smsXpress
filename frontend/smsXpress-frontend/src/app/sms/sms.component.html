@@ -1,24 +1,26 @@
-<section>
-    <section class="section-padding" id="smsPage">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
-                    <div class="page-title">
-                        <h2>Eviar SMS</h2>
+<div>
+        <label><h2>Telefones</h2></label>
+        <p>Pressione SPACE ao terminar de digitar o número!</p>
+        
+        <mat-form-field>
+                <mat-chip-list #chipList class="chip-list">
+                    <mat-chip *ngFor="let phone of phones" [selectable]="selectable"
+                        [removable]="removable" (removed)="remove(phone)">
+                                    {{phone.phone}}
+                        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                    </mat-chip>
                         
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-                    <div class="panel-group" id="accordion">
-                        <div class="panel">
-                            <div class="panel-collapse text-center">
-                                <p> Enviar sms</p>  
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <input matInput placeholder="Telefone (Ex.: +5583998765432)"
+                    [matChipInputFor]="chipList"
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                    [matChipInputAddOnBlur]="addOnBlur"
+                    (matChipInputTokenEnd)="add($event)">                
+                </mat-chip-list>
+        </mat-form-field>
+
+        <div class="form-group">
+            <textarea type="text" class="form-control"
+             placeholder="Digita aqui sua mensagem!"></textarea>
         </div>
-    </section>
+
+</div>

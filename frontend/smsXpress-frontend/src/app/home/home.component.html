@@ -17,13 +17,16 @@
               <p>Bem vindo ao smsXpress!! clique em Sobre para saber mais a respeito de
                 nossa ferramenta. Se já souber como funciona clique em Enviar SMS e bom uso!
               </p>
-              <button><a href="#sobreTab" 
-                pageScroll [pageScrollEasing]="myEasing" [pageScrollOffset]="myScrollOffset"
-                id="customEasingButton">Sobre</a></button> 
-              <button><a href="#smsTab" 
-                pageScroll [pageScrollEasing]="myEasing" [pageScrollOffset]="myScrollOffset"
-                id="customEasingButton">Enviar SMS</a></button> 
-                
+              <button href="#sobreTab"
+                      pageScroll
+                      [pageScrollEasing]="myEasing"
+                      [pageScrollOffset]="myScrollOffset"><a>Sobre</a></button> 
+
+              <button href="#smsTab" 
+                      pageScroll
+                      [pageScrollEasing]="myEasing"
+                      [pageScrollOffset]="myScrollOffset"><a>Enviar SMS</a></button> 
+                 
           </div>
         </div>
     </div>
