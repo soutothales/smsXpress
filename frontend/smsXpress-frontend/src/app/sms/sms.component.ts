@@ -18,6 +18,8 @@ export class SmsComponent implements OnInit {
   selectable = true;
   removable = true;
   addOnBlur = true;
+  mensagem = "";
+  showCar = false;
 
   readonly separatorKeysCodes: number[] = [ENTER, SPACE];
   phones: Phone[] = [ ];
@@ -45,6 +47,26 @@ export class SmsComponent implements OnInit {
     if (index >= 0) {
       this.phones.splice(index, 1);
     }
+  }
+
+  onSend() {
+    if(this.phones.length < 1 || this.mensagem.length < 1) {
+      if(this.phones.length < 1) {
+        alert("insira um número de telefone"); // mudar isso para um toast
+      } else {
+        alert("insira um corpo na mensagem"); // mudar isso para um toast
+      }
+      
+    } else {
+      this.showCar = true;          
+    }
+
+  }
+
+  backToSms() {
+    this.showCar = false;
+    this.mensagem = "";
+    this.phones = []
   }
 
   constructor() { }

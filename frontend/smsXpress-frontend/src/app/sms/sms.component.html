@@ -1,8 +1,13 @@
-<div>
-        <label><h2>Telefones</h2></label>
-        <p>Pressione SPACE ao terminar de digitar o número!</p>
+<!-- <div class="container" style="background-color: white;
+                              text-align: center;">
+
+        <div class="title">
+                <label><h2>Telefones</h2></label>
+                <p>Pressione SPACE ao terminar de digitar o número!</p>
+        </div>
         
-        <mat-form-field>
+        
+        <mat-form-field style="width: 70%">
                 <mat-chip-list #chipList class="chip-list">
                     <mat-chip *ngFor="let phone of phones" [selectable]="selectable"
                         [removable]="removable" (removed)="remove(phone)">
@@ -16,11 +21,57 @@
                     [matChipInputAddOnBlur]="addOnBlur"
                     (matChipInputTokenEnd)="add($event)">                
                 </mat-chip-list>
+
+
         </mat-form-field>
 
-        <div class="form-group">
+        <div class="form-group" style="width: 70%">
             <textarea type="text" class="form-control"
              placeholder="Digita aqui sua mensagem!"></textarea>
         </div>
 
+</div> -->
+
+<div class="sms">
+        <div class="main-sms">
+            <div class="main-menu">
+    
+              <div class="main-content" [hidden]="showCar">
+                    <p>Envie seu SMS!</p>
+                    <p style="font-size: 28px">Pressione ESPAÇO ao terminar de digitar o número</p>
+                  <mat-form-field style="width: 70%">
+                        <mat-chip-list #chipList class="chip-list">
+                            <mat-chip *ngFor="let phone of phones" [selectable]="selectable"
+                                [removable]="removable" (removed)="remove(phone)">
+                                            {{phone.phone}}
+                                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                            </mat-chip>
+                                
+                        <input matInput placeholder="Telefone (Ex.: +5583998765432)"
+                            [matChipInputFor]="chipList"
+                            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                            [matChipInputAddOnBlur]="addOnBlur"
+                            (matChipInputTokenEnd)="add($event)">                
+                        </mat-chip-list>
+        
+        
+                </mat-form-field>
+        
+                <div class="form-group">
+                    <textarea type="text" class="form-control"
+                     style="height: 100px;"
+                     [(ngModel)]="mensagem"
+                     placeholder="Digita aqui sua mensagem!"></textarea>
+                </div>
+                
+                <button (click)="onSend()"><a>Enviar</a></button>
+
+                
+            </div>
+
+            <div [hidden]="!showCar" class="main-content">
+                    <p>Oieeeee</p>
+                    <button (click)="backToSms()"><a>Voltar</a></button>         
+            </div>
+        </div>
 </div>

@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from "@angular/common/http";
 
 // import { AppRoutingModule, routes } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +12,7 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { MatIconModule,
          MatChipsModule,
          MatFormFieldModule,
-         MatChipInputEvent } from '@angular/material';
+         MatInputModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { RouterModule, Routes } from '@angular/router';
 
@@ -28,6 +30,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     MatChipsModule,
     MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    HttpClientModule,
     // AppRoutingModule,
     // RouterModule.forRoot(routes)
   ],
