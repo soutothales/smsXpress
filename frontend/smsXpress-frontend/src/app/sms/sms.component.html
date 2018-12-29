@@ -69,9 +69,20 @@
                 
             </div>
 
-            <div [hidden]="!showCar" class="main-content">
-                    <p>Oieeeee</p>
-                    <button (click)="backToSms()"><a>Voltar</a></button>         
-            </div>
+            <div class="main-sms">
+                <div class="main-menu">
+                    <div [hidden]="!showCar" class="main-content">
+                            <p>Custo total: R${{custo}}</p>
+                            <img src="../assets/images/shopping-cart.png" alt="shopcar">
+                            <div class="form-group confirm-send">
+                                <button (click)="backToSms()"><a>Voltar</a></button>
+                                <button (click)="confirmSend()"><a>Confirmar envio</a></button>
+                            </div>
+                                          
+                    </div>
+                    
+                </div> 
+            </div>    
+            
         </div>
 </div>

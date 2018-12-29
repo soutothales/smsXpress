@@ -59,3 +59,20 @@
     margin-top: auto;
     margin-bottom: 5%;
 }
+
+.sms .main-content .confirm-send button {
+    padding: 5px 20px;
+    background-color: #eb7d4b;
+    border-radius: 10px;
+    font-size: 20px;
+    box-shadow: 1px 4px #c86a40;
+    border: 0;
+    margin: 50px;
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+
+.sms .main-content img {
+    margin-left: 10%;
+
+}

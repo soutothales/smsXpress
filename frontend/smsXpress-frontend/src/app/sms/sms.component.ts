@@ -19,7 +19,12 @@ export class SmsComponent implements OnInit {
   removable = true;
   addOnBlur = true;
   mensagem = "";
+
   showCar = false;
+  custo: number;
+
+  PHONE_PRICE = 0.10;
+  CHAR_PRICE = 0.05;
 
   readonly separatorKeysCodes: number[] = [ENTER, SPACE];
   phones: Phone[] = [ ];
@@ -58,9 +63,14 @@ export class SmsComponent implements OnInit {
       }
       
     } else {
-      this.showCar = true;          
+      this.showCar = true;
+      this.custo = this.calculateCost();         
     }
 
+  }
+
+  confirmSend() {
+    
   }
 
   backToSms() {
@@ -68,6 +78,34 @@ export class SmsComponent implements OnInit {
     this.mensagem = "";
     this.phones = []
   }
+
+  calculateCost() {
+    var messageWithoutBlank = this.mensagem.trim();
+    var messageWords = messageWithoutBlank.split(' ');
+
+    var numChar = this.countChar(messageWords);
+
+    var totalPhones = this.phones.length * this.PHONE_PRICE;
+    var totalChar = Math.floor(numChar / 10) * this.CHAR_PRICE;
+
+    return totalChar + totalPhones;
+  }
+
+  countChar(words) {
+      var total = 0;
+      for(var i = 0; i < words.length; i++){
+          total += words[i].length;
+      }
+
+      return total;
+  };
+
+
+  formatProtocol(protocol) {
+      var newProtocol = protocol.substring(0, 4) + '-' + protocol.substring(4, 8) + '-' + protocol.substring(8, 12);
+
+      return newProtocol;
+  };
 
   constructor() { }
 
